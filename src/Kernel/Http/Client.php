@@ -12,7 +12,7 @@
 namespace EasyDingTalk\Kernel\Http;
 
 use GuzzleHttp\Middleware;
-use Overtrue\Http\Client as BaseClient;
+use Crasp\Http\Client as BaseClient;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
