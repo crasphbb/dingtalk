@@ -11,7 +11,7 @@
 
 namespace EasyDingTalk;
 
-use Overtrue\Http\Traits\HasHttpRequests;
+use Crasp\Http\Traits\HasHttpRequests;
 
 class Robot
 {
