@@ -120,6 +120,30 @@ class OAuthClient extends Client
 
         return $this->postJson('sns/getuserinfo_bycode', $data, $query);
     }
+     /**
+     * 添加扫码授权获取用户信息
+     
+     * @param $tempAuthCode
+     * @return array|\Crasp\Http\Support\Collection|object|\Psr\Http\Message\ResponseInterface|string
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @author huangbinbin
+     * @date   2023/8/28 12:01
+     */
+    public function userInfo($tempAuthCode)
+    {
+
+        $data = [
+            'tmp_auth_code' => $tempAuthCode,
+        ];
+
+        $query = [
+            'accessKey' => $this->credential['client_id'],
+            'timestamp' => $timestamp = (int) microtime(true) * 1000,
+            'signature' => $this->signature($timestamp),
+        ];
+
+        return $this->postJson('sns/getuserinfo_bycode', $data, $query);
+    }
 
     /**
      * 计算签名
